@@ -27,7 +27,7 @@ public class Pertsona implements Comparable<Pertsona> {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Persona other = (Persona) obj;
+		Pertsona other = (Pertsona) obj;
 		if (na == null) {
 			if (other.na != null)
 				return false;
