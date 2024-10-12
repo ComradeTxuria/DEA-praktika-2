@@ -33,7 +33,7 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 		
 		T itzuli = first.data; 
 		
-		if (first == null) {}
+		if (isEmpty()) {}
 		else {
 			first = null;
 		}
@@ -62,26 +62,48 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 		// objektuaren erreferentzia
 		// bueltatuko du (null ez baldin badago)
 		// KODEA OSATU ETA KOSTUA KALKULATU
-		if (first == null) {
-		return null;
+		
+		if (isEmpty()) 
+		{
+			return null;
 		}
-		else {
-			while (first.next != null) {
-				if (first.data == elem) {
+		else 
+		{
+			while (first != null) 
+			{
+				if (first.data == elem) 
+				{
 					first = null;
-					return 
+					return elem; 
 				}
+				first = first.next;
+			}
+			
+		}
+		return null;
+	}
+
+	public void removeAll(T elem) 
+	{
+		// Balio horretako elementu guztiak ezabatuko ditu
+		
+		if (isEmpty()) {}
+		else 
+		{
+			while (first != null) 
+			{
+				if (first.data == elem) 
+				{
+					first = null;
+				}
+				first = first.next;
 			}
 		}
-	};
-
-	public void removeAll(T elem) {
-		// Balio horretako elementu guztiak ezabatuko ditu
-
 	}
 
 	public T first() {
 		// listako lehen elementua ematen du
+		
 		if (isEmpty())
 			return null;
 		else
@@ -91,12 +113,25 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 	public T last() {
 		// listako azken elementua ematen du
 
-		return null;
+		if (isEmpty())
+			return null;
+		else
+			return last.data;
 	}
 
 	public ListADT<T> clone() {
 		// Zerrendaren kopia bat bueltatuko du (adabegi guztiak kopiatuko dira)
-		return null;
+		
+		if (isEmpty())
+			return null;
+		else
+		{
+			ListADT<T> clone = new DoubleLinkedList<T>();
+			while(first != last)
+			{
+				clone
+			}
+		}
 	}
 
 	public boolean contains(T elem) {
